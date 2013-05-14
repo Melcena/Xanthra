@@ -1,4 +1,4 @@
 ---
 layout: 'default'
-title: 'What now?'
+title: 'About Me'
 ---

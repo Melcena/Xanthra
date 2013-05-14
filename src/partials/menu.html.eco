@@ -1,0 +1,19 @@
+<!-- Define 'renderMenu' partial -->
+<% renderMenu = (items) => %>
+<ul class="menu">
+	<% for item in items: %>
+		<li<% if item.state: %> class="selected"<% end %>>
+		<% if item.state != 'current': %>
+                <a href="<%= item.url %>"><%= item.title %></a>
+            <% else: %>
+                <strong><%= item.title %></strong>
+            <% end %>
+            <!-- Render submenu if item has children -->
+            <% if item.children: %>
+                <%- renderMenu(item.children) %>
+            <% end %>
+        </li>
+    <% end %>
+</ul>   
+<% end %>
+<%= renderMenu @menuItems %>

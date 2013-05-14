@@ -1,3 +1,4 @@
+moment = require('moment').lang('en')
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
@@ -12,25 +13,23 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://website.com"
+			url: "http://xanthra.herokuapp.com"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
-				'www.website.com',
-				'website.herokuapp.com'
 			]
 
 			# The default title of our website
-			title: "Your Website"
+			title: "Xanthra's thoughts"
 
 			# The website description (for SEO)
 			description: """
-				When your website appears in search results in say Google, the text here will be shown underneath your website's title.
+				
 				"""
 
 			# The website keywords (for SEO) separated by commas
 			keywords: """
-				place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website
+				
 				"""
 
 			# The website's styles
@@ -46,7 +45,7 @@ docpadConfig = {
 				'/vendor/modernizr.js'
 				'/scripts/script.js'
 			]
-
+		formatDate: (date,format='LLLL') -> return moment(date).format(format)
 
 		# -----------------------------
 		# Helper Functions
